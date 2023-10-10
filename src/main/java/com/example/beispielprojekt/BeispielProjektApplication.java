@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @SpringBootApplication
@@ -14,17 +15,18 @@ public class BeispielProjektApplication {
 		public String saySomething();
 	}
 
-//	@Component
-//	public class SayHelloService implements SaySomethingSevice {
-//		@Override
-//		public String saySomething() {
-//			return "Hello World";
-//		}
-//	}
+	@Component
+	public class SayHelloService implements SaySomethingSevice {
+		@Override
+		public String saySomething() {
+			return "Hello World";
+		}
+	}
 
 	@Configuration
 	public class SaySomethingConfiguration {
 		@Bean
+		@Primary
 		public SaySomethingConfigurableService saySomethingConfigurableService() {
 			SaySomethingConfigurableService saySomethingConfigurableService = new SaySomethingConfigurableService();
 			saySomethingConfigurableService.setWhatToSay("Goodbye");
