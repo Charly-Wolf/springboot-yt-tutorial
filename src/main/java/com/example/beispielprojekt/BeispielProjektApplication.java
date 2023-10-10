@@ -1,5 +1,6 @@
 package com.example.beispielprojekt;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -16,6 +17,7 @@ public class BeispielProjektApplication {
 	}
 
 	@Component
+	@Qualifier("sayHelloService")
 	public class SayHelloService implements SaySomethingSevice {
 		@Override
 		public String saySomething() {
