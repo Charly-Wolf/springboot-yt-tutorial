@@ -53,8 +53,7 @@ public class BeispielProjektApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(BeispielProjektApplication.class, args);
-		SaySomethingSevice saySomethingSevice = applicationContext.getBean(SaySomethingSevice.class);
-		System.out.println(saySomethingSevice.saySomething());
+
 	}
 
 }
